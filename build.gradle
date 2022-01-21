@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+
+dependencies {
+    //Uncomment these to import the right repo. They all have the same interface, so only use one
+    //1.16.1
+//    implementation('com.github.jellejurre:seed-checker:1.16.1-SNAPSHOT'){transitive=false}
+    //1.17.1-pre1
+//    implementation('com.github.jellejurre:seed-checker:1.17.1-pre1-SNAPSHOT'){transitive=false}
+    //1.18.1
+    implementation('com.github.jellejurre:seed-checker:1.18.1-SNAPSHOT'){transitive=false}
+
+
+    implementation 'com.github.hube12:SEED:0dd874f0069cc4be9f41f0c3238f7694f982e60a'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    //Note: ONLY WORKS FOR 1.18.1
+    implementation 'com.github.jellejurre:biome-sampler:main-SNAPSHOT'
+    implementation 'com.github.kallestruik:noise-sampler:master-SNAPSHOT'
+}
+
+test {
+    useJUnitPlatform()
+}
